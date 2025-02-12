@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Duplicate Words</title>
+</head>
+<body>
+    <h2>Remove Consecutive Duplicate Words</h2>
+    <textarea id="inputText" rows="4" cols="50">one one two two one two</textarea>
+    <br>
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+    <h3>Result:</h3>
+    <p id="outputText"></p>
+
+    <script>
+        function removeDuplicates() {
+            let input = document.getElementById("inputText").value;
+            let words = input.split(" ");
+            let result = words.filter((word, index, arr) => index === 0 || word !== arr[index - 1]);
+            document.getElementById("outputText").innerText = result.join(" ");
+        }
+    </script>
+</body>
+</html>
